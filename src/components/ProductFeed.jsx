@@ -2,7 +2,7 @@
 import Product from "./Product";
 function ProductFeed({ products }) {
   return (
-    <section className=" grid grid-flow-row-dense -mt-40 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md: mx-auto">
+    <section className=" grid grid-flow-row-dense grid-cols-1 -mt-30   md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md:-mt-40 mx-auto">
       {products
         .slice(0, 4)
         .map(({ id, title, price, description, category, image }) => (
