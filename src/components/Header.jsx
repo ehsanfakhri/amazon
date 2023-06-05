@@ -9,11 +9,12 @@ function Header() {
       {/*Top nav */}
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2 ">
         <div className=" flex items-center mt-4 mx-2 flex-grow sm:flex-grow-0">
-          <Image
+           <img
+            loading="lazy"
             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-            width={140}
-            height={40}
-            style={{ objectFit: "contain" }}
+            width="140"
+            height="40"
+            alt=""
           />
         </div>
 
