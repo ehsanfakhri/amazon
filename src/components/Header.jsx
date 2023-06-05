@@ -1,5 +1,3 @@
-"use client";
-import Image from "next/image";
 import SearchIcon from "./icons/SearchIcon";
 import ShopingCartIcon from "./icons/ShopingCart";
 import MenuIcon from "./icons/MenuIcon";
