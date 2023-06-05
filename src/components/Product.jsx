@@ -7,7 +7,7 @@ function Product({ id, title, price, description, category, image }) {
   const hasPrime = true;
 
   return (
-    <section className=" relative flex flex-col items-stretch m-5 bg-white z-30 p-10">
+    <section className=" relative flex flex-col items-stretch m-20  bg-white z-30 p-10 sm:m-5">
       <p className=" absolute top-2 right-2 text-xs italic  text-gray-400">
         {category}
       </p>
