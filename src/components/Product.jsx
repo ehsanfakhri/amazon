@@ -1,35 +1,27 @@
 "use client";
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import StarIcon from "./icons/StarIcon";
 import CurrencyFormat from "react-currency-format";
 
-const MAX_RATING = 5;
-const MIN_RATING = 1;
-
 function Product({ id, title, price, description, category, image }) {
-  const [rating, setRating] = useState(
-    Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
-  );
-  const [hasPrime] = useState(Math.random() < 0.5);
-
-
-
+  const hasPrime= true;
+  
   return (
     <section className=" relative flex flex-col m-5 bg-white z-30 p-10">
       <p className=" absolute top-2 right-2 text-xs italic  text-gray-400">
         {category}
       </p>
+
       <Image src={image} height={200} width={200} style={{objectFit: "contain"}} />
+
       <h4 className="my-3">{title}</h4>
-      <div className="flex">
-        {Array(rating)
-          .fill()
-          .map((_, i) => (
-            <StarIcon />
-          ))}
+
+     <div className="flex">
+        <StarIcon />
       </div>
+
       <p className=" text-xs my-2 line-clamp-2">{description}</p>
+
       <div className="mb-5">
         <CurrencyFormat
           value={price}
