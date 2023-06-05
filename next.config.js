@@ -7,6 +7,7 @@ const nextConfig = {
       "www.thekandyking.co.uk",
       "images-eu.ssl-images-amazon.com",
       "www.w3.org",
+      "pngimg.com",
     ],
   },
 };
