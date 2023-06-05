@@ -20,8 +20,6 @@ Run commands
 
 ### If you see the window below then you are set to build AMAZON !
 
-Deploy on vercel.
-https://amazon-nu-kohl.vercel.app/
 
 ![Template Screenshot](TemplateScreenshot.jpg?raw=true "Template Screenshot")
 # amazon
