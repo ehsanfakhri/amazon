@@ -4,25 +4,32 @@ import StarIcon from "./icons/StarIcon";
 import CurrencyFormat from "react-currency-format";
 
 function Product({ id, title, price, description, category, image }) {
-  const hasPrime= true;
-  
+  const hasPrime = true;
+
   return (
-    <section className=" relative flex flex-col m-5 bg-white z-30 p-10">
+    <section className=" relative flex flex-col items-stretch m-5 bg-white z-30 p-10">
       <p className=" absolute top-2 right-2 text-xs italic  text-gray-400">
         {category}
       </p>
 
-      <Image src={image} height={200} width={200} style={{objectFit: "contain"}} />
+      <div className="flex self-center">
+        <Image
+          src={image}
+          height={200}
+          width={200}
+          style={{ objectFit: "contain" }}
+        />
+      </div>
 
       <h4 className="my-3">{title}</h4>
 
-     <div className="flex">
+      <div className="flex">
         <StarIcon />
       </div>
 
       <p className=" text-xs my-2 line-clamp-2">{description}</p>
 
-      <div className="mb-5">
+      <div className=" mb-8">
         <CurrencyFormat
           value={price}
           displayType={"text"}

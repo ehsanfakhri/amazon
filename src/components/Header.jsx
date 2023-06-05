@@ -7,11 +7,11 @@ function Header() {
       {/*Top nav */}
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2 ">
         <div className=" flex items-center mt-4 mx-2 flex-grow sm:flex-grow-0">
-           <img
+          <Image
             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-            width="140"
-            height="40"
-            alt=""
+            width={140}
+            height={40}
+            style={{ objectFit: "contain" }}
           />
         </div>
 
@@ -49,8 +49,8 @@ function Header() {
       </div>
 
       {/* Buttom nav */}
-      <div className="flex  items-center bg-amazon_blue-light space-x-3 text-xs text-white p-2 pl-4  ">
-        <div className="flex items-center link">
+      <div className="flex  items-center bg-amazon_blue-light space-x-3 text-white p-2 pl-6  ">
+        <div className="flex items-center">
           <MenuIcon />
           <p>All</p>
         </div>
