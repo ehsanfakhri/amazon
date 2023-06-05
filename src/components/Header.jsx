@@ -44,7 +44,7 @@ function Header() {
       </div>
 
       {/* Buttom nav */}
-      <div className="flex  items-center bg-amazon_blue-light space-x-3 text-white p-2 pl-6  ">
+      <div className="flex  items-center text-xs bg-amazon_blue-light space-x-3 text-white p-2 pl-6  ">
         <div className="flex items-center">
           <MenuIcon />
           <p>All</p>
