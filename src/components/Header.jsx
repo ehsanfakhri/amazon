@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import SearchIcon from "./icons/SearchIcon";
 import ShopingCartIcon from "./icons/ShopingCart";
@@ -12,7 +13,7 @@ function Header() {
             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
             width={140}
             height={40}
-            style={{objectFit: "contain"}}
+            style={{ objectFit: "contain" }}
           />
         </div>
 
@@ -52,22 +53,17 @@ function Header() {
       {/* Buttom nav */}
       <div className="flex  items-center bg-amazon_blue-light space-x-3 text-white p-2 pl-6  ">
         <div className="flex items-center">
-        <MenuIcon />
-        <p >
-           All
-        </p>
+          <MenuIcon />
+          <p>All</p>
         </div>
-      
-        
+
         <p className="link">Prime Video</p>
         <p className="link">Amazon Business</p>
         <p className="link">Today's Deals</p>
-        <p className="link hidden lg:inline-flex">Electronics</p>
-        <p className="link hidden lg:inline-flex">Food & Grocery</p>
-        <p className="link hidden lg:inline-flex">Prime</p>
-        <p className="link hidden lg:inline-flex">Buy Again</p>
-        <p className="link hidden lg:inline-flex">Shopper Toolkit</p>
-        <p className="link hidden lg:inline-flex">Health & Personal Care</p>
+        <p className="link hidden  lg:inline-flex">Electronics</p>
+        <p className="link hidden  lg:inline-flex">Food & Grocery</p>
+        <p className="link hidden  lg:inline-flex">Prime</p>
+        <p className="link hidden  lg:inline-flex">Buy Again</p>
       </div>
     </header>
   );
