@@ -1,6 +1,5 @@
 "use client";
 import Product from "./Product";
-
 function ProductFeed({ products }) {
   return (
     <section className=" grid grid-flow-row-dense md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md: mx-auto">
