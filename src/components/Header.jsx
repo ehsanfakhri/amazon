@@ -1,13 +1,22 @@
+"use client";
+
 import SearchIcon from "./icons/SearchIcon";
 import ShopingCartIcon from "./icons/ShopingCart";
 import MenuIcon from "./icons/MenuIcon";
-function Header() {
+import { signIn, signOut } from "next-auth/react";
+
+function Header({ session }) {
   return (
     <header>
       {/*Top nav */}
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2 ">
         <div className=" flex items-center mt-4 mx-2 flex-grow sm:flex-grow-0">
-           <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" width="140" height="40" alt="" />
+          <img
+            src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+            width="140"
+            height="40"
+            alt=""
+          />
         </div>
 
         {/* Search */}
@@ -16,13 +25,22 @@ function Header() {
             className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none px-4"
             type="text"
           />
+
           <SearchIcon />
         </div>
 
         {/* Right */}
         <div className=" text-white text-xs flex items-center space-x-6 mx-6  whitespace-nowrap   ">
-          <div className="link">
-            <p>Hello Mr_Fakhri</p>
+          <div
+            onClick={
+              !session
+                ? () =>
+                    signIn("google", { callbackUrl: "http://localhost:3000" })
+                : signOut
+            }
+            className="link"
+          >
+            <p>{session ? `Hello ${session.user.name}` : "Sing in"}</p>
             <p className=" font-extrabold md:text-sm ">Account & Lists</p>
           </div>
 

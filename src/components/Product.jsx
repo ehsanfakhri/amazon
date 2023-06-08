@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import StarIcon from "./icons/StarIcon";
 import CurrencyFormat from "react-currency-format";
