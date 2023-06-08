@@ -19,7 +19,6 @@ export default async function Home() {
 
   return (
     <div className="bg-gray-100">
-      <pre>{JSON.stringify(session, null, 2)}</pre>
       <Header session={session} />
 
       <main className="max-w-screen-2xl mx-auto">
