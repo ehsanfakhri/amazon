@@ -17,7 +17,6 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Providers store={store}>
-          {children}
           <NextAuthProvider>{children}</NextAuthProvider>
         </Providers>
       </body>
