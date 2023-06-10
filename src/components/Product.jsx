@@ -3,9 +3,25 @@
 import Image from "next/image";
 import StarIcon from "./icons/StarIcon";
 import CurrencyFormat from "react-currency-format";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../app/redux/features/basket/basketSlice.js";
 
 function Product({ id, title, price, description, category, image }) {
+  const dispatch = useDispatch();
   const hasPrime = true;
+
+  const addItemToBasket = () => {
+    const product = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+    };
+    // Sending the product as an action to the REDUX store... the basket slice
+    dispatch(addToBasket(product));
+  };
 
   return (
     <section className=" relative flex flex-col items-stretch m-5 bg-white z-30 p-10 ">
@@ -49,7 +65,9 @@ function Product({ id, title, price, description, category, image }) {
           <p className=" text-xs test-gray-500">FREE Next-day Delivery</p>
         </div>
       )}
-      <button className="mt-auto buttom">Add to Basket</button>
+      <button onClick={addItemToBasket} className="mt-auto buttom">
+        Add to Basket
+      </button>
     </section>
   );
 }

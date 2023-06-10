@@ -13,9 +13,9 @@ export async function getProductFeed() {
 }
 
 export default async function Home() {
-  const session = await getServerSession(authOptions);
-
   const products = await getProductFeed();
+
+  const session = await getServerSession(authOptions);
 
   return (
     <div className="bg-gray-100">

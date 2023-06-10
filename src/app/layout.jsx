@@ -2,6 +2,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { NextAuthProvider } from "./providers.jsx";
 
+import { Providers } from "./redux/provider";
+import { store } from "./redux/store.js";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -9,11 +12,14 @@ export const metadata = {
   description: "Amazon Simple",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NextAuthProvider>{children}</NextAuthProvider>
+        <Providers store={store}>
+          {children}
+          <NextAuthProvider>{children}</NextAuthProvider>
+        </Providers>
       </body>
     </html>
   );

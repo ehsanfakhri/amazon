@@ -1,0 +1,26 @@
+"use client";
+
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  items: [],
+};
+
+export const basketSlice = createSlice({
+  name: "basket",
+  initialState,
+  reducers: {
+    // Actions
+    addToBasket: (state, action) => {
+      state.items = [...state.items, action.payload];
+    },
+    removeFromBasket: (state, action) => {},
+  },
+});
+
+export const { addToBasket, removeFromBasket } = basketSlice.actions;
+
+// Selectors - this is now we pull information from the Global store slice
+export const selectItems = (state) => state.basket.items;
+
+export default basketSlice.reducer;

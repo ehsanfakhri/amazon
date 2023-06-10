@@ -4,14 +4,22 @@ import SearchIcon from "./icons/SearchIcon";
 import ShopingCartIcon from "./icons/ShopingCart";
 import MenuIcon from "./icons/MenuIcon";
 import { signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useSelector } from "react-redux";
+import { selectItems } from "../app/redux/features/basket/basketSlice.js";
 
 function Header({ session }) {
+  const router = useRouter();
+  const items = useSelector(selectItems);
+
   return (
     <header>
       {/*Top nav */}
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2 ">
         <div className=" flex items-center mt-4 mx-2 flex-grow sm:flex-grow-0">
           <img
+            className="cursor-pointer"
+            onClick={() => router.push("/")}
             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
             width="140"
             height="40"
@@ -49,9 +57,12 @@ function Header({ session }) {
             <p className=" font-extrabold md:text-sm">& Orders</p>
           </div>
 
-          <div className=" relative link  flex items-center">
+          <div
+            onClick={() => router.push("/checkout")}
+            className=" relative link  flex items-center"
+          >
             <span className=" absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold ">
-              4
+              {items.length}
             </span>
             <ShopingCartIcon />
             <p className=" hidden md:inline font-extrabold md:text-sm mt-2">

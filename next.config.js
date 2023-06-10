@@ -8,6 +8,7 @@ const nextConfig = {
       "images-eu.ssl-images-amazon.com",
       "www.w3.org",
       "pngimg.com",
+      "www.junglescout.com",
     ],
   },
 };
